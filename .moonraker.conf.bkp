@@ -30,6 +30,10 @@ trusted_clients =
 subscriptions = 
 	mainsail
 
+[timelapse]
+output_path = ~/timelapse/
+ffmpeg_binary_path = /usr/bin/ffmpeg
+
 [update_manager]
 refresh_interval = 168
 enable_auto_refresh = True
@@ -68,4 +72,27 @@ path = ~/klipper-toolchanger-easy
 origin = https://github.com/jwellman80/klipper-toolchanger-easy.git
 managed_services = klipper
 primary_branch = main
+
+[update_manager Klippain-ShakeTune]
+type = git_repo
+origin = https://github.com/Frix-x/klippain-shaketune.git
+path = ~/klippain_shaketune
+virtualenv = /home/mainsail/klippy-env
+requirements = requirements.txt
+system_dependencies = system-dependencies.json
+primary_branch = main
+managed_services = klipper
+
+[update_manager timelapse]
+type = git_repo
+primary_branch = main
+path = ~/moonraker-timelapse
+origin = https://github.com/mainsail-crew/moonraker-timelapse.git
+managed_services = klipper moonraker
+
+[update_manager led_effect]
+type = git_repo
+path = ~/klipper-led_effect
+origin = https://github.com/julianschill/klipper-led_effect.git
+is_system_service = False
 
